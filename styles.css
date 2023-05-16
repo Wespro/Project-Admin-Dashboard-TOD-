@@ -20,7 +20,7 @@ a {
   display: grid;
   grid-template-columns: 1fr;
   align-content: start;
-  gap: 2.5rem;
+  gap: 4rem;
   padding: 3rem;
   box-shadow: 5px 50px 20px black;
 }
@@ -171,7 +171,7 @@ a {
   grid-area: 2/2/3/3;
   background-color: rgb(231, 231, 231);
   display: grid;
-  grid-template-columns: 6fr 2fr;
+  grid-template-columns: 8fr 2fr;
 
   padding: 3rem 2rem;
 }
@@ -214,7 +214,7 @@ a {
 .sideCards {
   padding: 2rem 0;
   display: grid;
-  grid-template-columns: minmax(290px, 1fr);
+  grid-template-columns: minmax(290px, 340px);
   grid-template-rows: max-content max-content;
   gap: 4rem;
 }
@@ -269,8 +269,8 @@ button img {
 }
 .insta {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 10px;
+  grid-template-columns: 1fr 4fr;
+  gap: 1rem;
   align-items: center;
 }
 .trending .caption {
@@ -289,6 +289,9 @@ button img {
 }
 .trending .text p:nth-of-type(2) {
   font-size: 0.9rem;
+}
+.trending .text p:nth-of-type(1) {
+  color: rgb(0, 123, 206);
 }
 footer {
   background-color: rgb(0, 0, 0);
