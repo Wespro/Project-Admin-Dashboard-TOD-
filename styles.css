@@ -6,8 +6,8 @@
 }
 body {
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 8fr 0.8fr;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: auto auto auto;
   font-family: "Roboto", sans-serif;
 }
 a {
@@ -15,7 +15,7 @@ a {
 }
 /* sidebar */
 .sideBar {
-  background-color: rgb(0, 204, 255);
+  background-color: rgb(0, 136, 214);
   grid-area: 1/1/3/2;
   display: grid;
   grid-template-columns: 1fr;
@@ -27,18 +27,18 @@ a {
 .title {
   display: grid;
   grid-template-columns: max-content max-content;
-  gap: 2rem;
+  gap: 1rem;
   color: aliceblue;
 }
 .sideBar h2 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 .logo {
   margin-bottom: 1.3rem;
   display: grid;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   gap: 3px;
   grid-template-columns: 1fr 1fr;
 }
@@ -69,24 +69,102 @@ a {
   justify-items: start;
   gap: 1rem;
   color: white;
-  font-weight: 900;
-  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 15px;
 }
 .option:hover {
   color: rgb(228, 228, 227);
 }
 .option img {
-  width: 40px;
-  fill: #da4567;
-}
-.option img:hover {
-  fill: rgb(224, 7, 7);
+  width: 35px;
 }
 
 /* header */
 .header {
-  background-color: rgb(2, 61, 20);
+  padding: 2rem;
+  background-color: rgb(255, 255, 255);
   grid-area: 1/2/2/2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+.top {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1rem;
+  align-items: center;
+}
+.search {
+  display: grid;
+  grid-template-columns: 1fr 30fr;
+  gap: 0.5rem;
+}
+.search img {
+  width: 30px;
+}
+.search input {
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(231, 231, 231);
+}
+.top .rightSide {
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  justify-content: end;
+  justify-items: end;
+  align-items: center;
+  gap: 2rem;
+}
+.header h3 {
+  width: max-content;
+}
+.top .rightSide img:nth-child(1) {
+  width: 25px;
+  cursor: pointer;
+}
+.top .rightSide img:nth-child(2) {
+  width: 60px;
+  border-radius: 100%;
+}
+.header .bottom {
+  display: grid;
+  grid-template-columns: 4.5fr 3fr;
+  align-items: center;
+}
+.bottom .leftSide {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  gap: 10px;
+  align-items: center;
+}
+.bottom .leftSide img {
+  width: 85px;
+  border-radius: 100%;
+}
+.bottom .leftSide .text {
+  display: grid;
+  gap: 0.6rem;
+}
+.bottom .rightSide {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  justify-content: space-around;
+}
+.bottom .rightSide button {
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: rgb(0, 153, 255);
+  font-size: 1rem;
+  font-weight: 900;
+}
+.bottom .rightSide button:hover {
+  background-color: rgb(0, 110, 184);
 }
 /* main */
 .main {
@@ -94,44 +172,53 @@ a {
   background-color: rgb(231, 231, 231);
   display: grid;
   grid-template-columns: 6fr 2fr;
+
   padding: 3rem 2rem;
 }
 .your-projects {
+  position: relative;
   padding: 2rem;
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-auto-rows: minmax(260px, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 230px));
+}
+.cardsCaption {
+  padding: 0 2rem;
+  font-size: 1.2rem;
+  position: absolute;
+  top: -10px;
 }
 .card {
   padding: 2rem;
   background-color: white;
-  border-radius: 2%;
+  border-radius: 14px;
   border-left: 6px solid orange;
   display: grid;
-  gap: 3rem;
+  gap: 1rem;
   align-content: space-around;
+}
+.card h2 {
+  font-size: 1rem;
+}
+.card p {
+  font-size: 13px;
 }
 .cardtext {
   display: grid;
   gap: 1rem;
 }
 .cardOptions {
-  justify-self: self-end;
+  justify-self: end;
 }
 .sideCards {
   padding: 2rem 0;
-  grid-area: 3/2/-1/3;
   display: grid;
-  grid-template-columns: minmax(300, 380px);
-  display: grid;
+  grid-template-columns: minmax(290px, 1fr);
+  grid-template-rows: max-content max-content;
   gap: 4rem;
 }
-.cardsCaption {
-  padding: 0 2rem;
-  font-size: 1.4rem;
-  align-self: end;
-}
+
 .cardOptions {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -143,8 +230,7 @@ button img {
   fill: red;
   /* stroke stop-color flood-color lighting-color; */
 }
-button img:hover {
-}
+
 .card button {
   border: none;
   background-color: white;
@@ -153,7 +239,7 @@ button img:hover {
 .announcement,
 .trending {
   background-color: white;
-  border-radius: 2%;
+  border-radius: 14px;
   padding: 2rem;
   position: relative;
 }
@@ -161,24 +247,24 @@ button img:hover {
   margin: 1rem 0;
 }
 .announcement h2 {
-  margin: 0rem 0 0.5rem;
+  margin: 0rem 0 0.3rem;
 }
 .announcement .caption {
   position: absolute;
-  top: -60px;
+  top: -40px;
   left: 5px;
+  font-size: 1.2rem;
 }
 .announcement p {
   font-size: 15px;
 }
 .trending {
-  padding: 1rem;
-  display: grid;
-  gap: 1rem;
+  padding: 2rem 1.2rem;
 }
 .sideCard {
   display: grid;
-  gap: 1.5rem;
+  grid-auto-rows: max-content;
+  gap: 1rem;
 }
 .insta {
   display: grid;
@@ -190,14 +276,18 @@ button img:hover {
   position: absolute;
   top: -40px;
   left: 5px;
+  font-size: 1.2rem;
 }
 .trending img {
   border-radius: 100%;
-  width: 80%;
+  width: 70px;
 }
 .trending .text {
   display: grid;
   gap: 8px;
+}
+.trending .text p:nth-of-type(2) {
+  font-size: 0.9rem;
 }
 footer {
   background-color: rgb(0, 0, 0);
